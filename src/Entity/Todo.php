@@ -3,7 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+//use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TodoRepository")
  */
@@ -17,11 +18,15 @@ class Todo
     private $id;
 
     /**
+     *
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
     /**
+     * @Assert\Email(
+     *     message="This is not a valid email {{ value }}"
+     * )
      * @ORM\Column(type="string", length=255)
      */
     private $priority;
