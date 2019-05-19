@@ -18,7 +18,7 @@ class Todo
     private $id;
 
     /**
-     *
+     *urpose. This
      * @ORM\Column(type="string", length=255)
      */
     private $name;
@@ -35,6 +35,21 @@ class Todo
      * @ORM\Column(type="string", length=255)
      */
     private $status;
+
+    /**
+     * @ORM\Column(type="datetime", options={"default":"1970-01-02"})
+     */
+    private $createdData;
+
+    /**
+     * @ORM\Column(type="datetime",options={"default":"1970-01-02"})
+     */
+    private $dateDue;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
 
     public function getId(): ?int
     {
@@ -73,6 +88,42 @@ class Todo
     public function setStatus(string $status): self
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getCreatedData(): ?\DateTimeInterface
+    {
+        return $this->createdData;
+    }
+
+    public function setCreatedData(\DateTimeInterface $createdData): self
+    {
+        $this->createdData = $createdData;
+
+        return $this;
+    }
+
+    public function getDateDue(): ?\DateTimeInterface
+    {
+        return $this->dateDue;
+    }
+
+    public function setDateDue(\DateTimeInterface $dateDue): self
+    {
+        $this->dateDue = $dateDue;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

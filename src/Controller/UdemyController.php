@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Entity\Todo;
 use App\Form\TodoType;
 
+use mysql_xdevapi\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,32 +15,25 @@ use Symfony\Component\Routing\Annotation\Route;
 class UdemyController extends AbstractController
 {
     /**
-     * @Route("/udemy", name="udemy")
+     * @Route("/", name="udemy")
      */
     public function index()
     {
 
         $em = $this->getDoctrine()->getManager();
-        $todo = new Todo();
-        $todo->setName("publish YouTube videos")
-            ->setPriority("Low")
-            ->setStatus("in progress");
+        $todos = $em->getRepository(Todo::class)->findAll();
 
-        $em->persist($todo);
-        $em->flush();
-
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/UdemyController.php',
+        return $this->render('udemy/index.html.twig', [
+            'todos' => $todos,
         ]);
     }
 
     /**
      * load todos from databases
-     * @Route("/todo/{name}" , name="todo")
+     * @Route("/add" , name="add-todo")
      */
 
-    public function todo(String $name, Request $request)
+    public function todo(Request $request)
     {
 
         $form = $this->createForm(TodoType::class);
@@ -47,16 +41,26 @@ class UdemyController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $todTmp = $form->getData();
+            try {
 
-            $em = $this->getDoctrine()->getManager();
+                $todTmp = $form->getData();
 
+                $em = $this->getDoctrine()->getManager();
 
-            $em->persist($todTmp);
-            $em->flush();
+                $this->addFlash(
+                    'notice',
+                    'Your todo is record'
+                );
+
+                $em->persist($todTmp);
+                $em->flush();
+
+            } catch (\Exception $Exception) {
+
+            }
         }
         return $this->render('udemy/todo.html.twig', array(
-            'name' => $name,
+
             'form' => $form->createView()
         ));
     }
@@ -150,6 +154,7 @@ class UdemyController extends AbstractController
             $em->flush();
         }
         return $this->render('udemy/todo.html.twig', array(
+
             'form' => $form->createView()
         ));
     }

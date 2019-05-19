@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "sensio/framework-extra-bundle": "^5.3",
+        "symfony/asset": "4.2.*",
         "symfony/console": "4.2.*",
         "symfony/dotenv": "4.2.*",
         "symfony/flex": "^1.1",
@@ -15,6 +16,7 @@
         "symfony/orm-pack": "^1.0",
         "symfony/twig-bundle": "4.2.*",
         "symfony/validator": "4.2.*",
+        "symfony/webpack-encore-bundle": "^1.5",
         "symfony/yaml": "4.2.*"
     },
     "config": {

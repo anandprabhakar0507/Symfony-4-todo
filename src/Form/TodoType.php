@@ -5,7 +5,7 @@ namespace App\Form;
 use App\Entity\Todo;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,9 +15,12 @@ class TodoType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('priority')
             ->add('status')
-            ->add('priority', TextType::class , array('label' => false))
-            ->add('Submit', SubmitType::class)
+            ->add('createdData')
+            ->add('dateDue')
+            ->add('description' , TextareaType::class)
+            ->add('Submit' , SubmitType::class)
         ;
     }
 
