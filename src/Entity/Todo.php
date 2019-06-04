@@ -51,6 +51,12 @@ class Todo
      */
     private $description;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\user", cascade={"persist", "remove"})
+     */
+    private $user;
+ 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -127,4 +133,18 @@ class Todo
 
         return $this;
     }
+
+    public function getUser(): ?user
+    {
+        return $this->user;
+    }
+
+    public function setUser(?user $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+
 }

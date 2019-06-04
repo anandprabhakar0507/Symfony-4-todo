@@ -1,40 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
-    {% block stylesheets %}{% endblock %}
-</head>
-<body>
-{% block udemyStuff %}{% endblock %}
-<header class="p-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-4">
-                <a href="{{ path('udemy') }}">Let's Do</a>
-            </div>
-            <div class="col-12 col-lg-4">
-                <input type="text" placeholder="Search">
-            </div>
-            <div class="col-12 col-lg-4">
-                <a href="{{ path('add-todo') }}"> + </a>
-            </div>
-        </div>
-    </div>
-</header>
-<div class="container">
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 wrapper p-5">
-            <div class="wrapper-container">
-                {% block body %}{% endblock %}
-            </div>
-        </div>
-    </div>
-</div>
-{% block javascripts %}{% endblock %}
-</body>
-</html>
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>{% block title %}{% endblock %}</title>#}
+
+{#    <link rel="stylesheet" href="{{ asset('build/app.css') }}">#}
+{#    {% block stylesheets %}{% endblock %}#}
+{#</head>#}
+{#<body>#}
+{#{% block udemyStuff %}{% endblock %}#}
+{#<header class="p-2">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-12 col-lg-4">#}
+{#                <a href="{{ path('udemy') }}">Let's Do</a>#}
+{#            </div>#}
+{#            <div class="col-12 col-lg-4">#}
+{#                <input type="text" placeholder="Search">#}
+{#            </div>#}
+{#            <div class="col-12 col-lg-4">#}
+{#                <a href="{{ path('add-todo') }}"> + </a>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</header>#}
+{#<div class="container">#}
+{#    <div class="row">#}
+{#        <div class="col-1"></div>#}
+{#        <div class="col-10 wrapper p-5">#}
+{#            <div class="wrapper-container">#}
+{#                {% block body %}{% endblock %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+{#{% block javascripts %}#}
+{#    <script src="{{ asset('build/runtime.js') }}"></script>#}
+{#    <script src="{{ asset('build/app.js') }}"></script>#}
+{#{% endblock %}#}
+{#</body>#}
+{#</html>#}
+ {% block body %}{% endblock %}

@@ -3,10 +3,13 @@
 namespace App\Controller;
 
 
+use App\Entity\Citizen;
+use App\Entity\City;
+use App\Entity\Product;
 use App\Entity\Todo;
+
 use App\Form\TodoType;
 
-use mysql_xdevapi\Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -157,6 +160,64 @@ class UdemyController extends AbstractController
 
             'form' => $form->createView()
         ));
+    }
+
+    /**
+     * @Route("/relation" , name="Relation")
+     */
+
+    public function relation()
+    {
+        /**
+         * one to one relation
+         */
+        $entityManager = $this->getDoctrine()->getManager();
+        /*$user = new User();
+        $todo = new Todo();
+        $user->setName('Aloui');
+
+        $todo->setName('one to one with user')
+            ->setPriority('high')
+            ->setStatus('pending')
+            ->setCreatedData(new \DateTime())
+            ->setDateDue(new \DateTime())
+            ->setDescription("Random description")
+            ->setUser($user);
+
+        $entityManager->persist($todo);
+        $entityManager->flush();*/
+
+        /**
+         * many to one
+         */
+        /*$category = new Category();
+        $category->setName('Symfony courses');
+        $entityManager->persist($category);
+        for ($i = 0; $i < 4; $i++) {
+            $product = new Product();
+            $product->setName('product ' . $i)
+                ->setRelation($category);
+            $entityManager->persist($product);
+        }*/
+
+        /**
+         * many to many
+         */
+
+        $city = new City();
+        $citizen = new Citizen();
+
+        $city->setName('Tunis')
+            ->addCitizen($citizen);
+
+        $citizen->setName('Aloui Mohamed ')
+            ->addCity($city);
+
+        $entityManager->persist($city);
+        $entityManager->persist($citizen);
+
+        $entityManager->flush();
+        return new Response("All went well");
     }
 }
 
