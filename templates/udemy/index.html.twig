@@ -5,18 +5,27 @@
     {% if todos | length ==0 %}
         No todo for now!
     {% else %}
-
+        <div class="row">
+            <div class="col-12">
+                {% for message in app.flashes('notice') %}
+                    <div class="alert alert-success mb-2">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
         <div class="accordion" id="accordionExample">
             {% for todo in todos %}
 
                 <div class="card">
                     <div class="todo-header " id="headingOne">
 
-                        <div class="btn btn-link collapser d-block   p-2 text-left" type="button" data-toggle="collapse"
+                        <div class="btn btn-link collapser d-block   p-3  text-left" type="button"
+                             data-toggle="collapse"
                              data-target="#collapseOne{{ loop.index }}"
                              aria-expanded="{% if loop.first %} true {% endif %}"
                              aria-controls="collapseOne{{ loop.index }}">
-                            <span class="status {% if todo.status == 'Pending' %} done {% endif %}"></span> <span
+                            <span class="status {% if todo.status | lower == 'done' %} done {% endif %}"></span> <span
                                     class=" todo-name"> {{ todo.title }} </span>
                         </div>
 
@@ -31,9 +40,15 @@
                             <span> Date: {{ todo.createdDate  | date("m/d/Y") }} </span>
                             <hr>
                             <ul class="nav ">
-                                <li class="mr-4 d-inline-block"><a href="/edit/{{ todo.id }}">Edit</a></li>
-                                <li class="mr-4 d-inline-block"><a href="/edit/{{ todo.id }}">Close</a></li>
-                                <li class="mr-4 d-inline-block"><a href="/delete/{{ todo.id }}">Delete</a></li>
+
+                                <li class="mr-4 d-inline-block"><a href="/todo-edit/{{ todo.id }}">Edit</a></li>
+                                <li class="mr-4 d-inline-block">
+                                    <a  class=" {% if( todo.status | lower) == 'done' %}  text-overline {% endif %}"
+                                            {% if( todo.status | lower) != 'done' %} href="/closeTodo/{{ todo.id }}" {% endif %} >
+                                        Close
+                                    </a>
+                                </li>
+                                <li class="mr-4 d-inline-block"><a href="/deletetodo/{{ todo.id }}">Delete</a></li>
                             </ul>
                         </div>
                     </div>

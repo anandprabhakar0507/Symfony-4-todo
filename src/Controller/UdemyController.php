@@ -129,8 +129,40 @@ class UdemyController extends AbstractController
         }
         $entityManager->remove($todo);
         $entityManager->flush();
-        return new Response("Todo with $id is removed correctly!");
+        $this->addFlash(
+            'notice',
+            'Todo deleted correctly'
+        );
+
+        return $this->redirectToRoute('udemy');
     }
+
+
+
+    /**
+     * @Route("closeTodo/{id}" , name="close_todo")
+     */
+    public function closeTodo($id)
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $todo = $entityManager->getRepository(Todo::class)->find($id);
+        if (!$todo) {
+            throw $this->createNotFoundException(
+                'No record for the todo with the id :' . $id
+            );
+        }
+        $todo->setStatus('done');
+        $entityManager->flush();
+        $this->addFlash(
+            'notice',
+            "Todo $id upadted correctly"
+        );
+
+        return $this->redirectToRoute('udemy');
+    }
+
+
 
     /**
      * Edit todo
@@ -151,16 +183,18 @@ class UdemyController extends AbstractController
             $todTmp = $form->getData();
 
             $em = $this->getDoctrine()->getManager();
-
-
+            $this->addFlash(
+                'notice',
+                'Your todo is record'
+            );
             $em->persist($todTmp);
             $em->flush();
         }
         return $this->render('udemy/todo.html.twig', array(
-
             'form' => $form->createView()
         ));
     }
+
 
     /**
      * @Route("/relation" , name="Relation")
