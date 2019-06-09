@@ -2,63 +2,46 @@
 
 {% block title %} Todo App{% endblock %}
 {% block body %}
-    <div class="accordion" id="accordionExample">
-        <div class="card">
-            <div class="card-header" id="headingOne">
-                <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Collapsible Group Item #1
-                    </button>
-                </h2>
-            </div>
+    {% if todos | length ==0 %}
+        No todo for now!
+    {% else %}
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Collapsible Group Item #2
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Collapsible Group Item #3
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-            </div>
-        </div>
-    </div>
-    {% for todo in todos %}
+        <div class="accordion" id="accordionExample">
+            {% for todo in todos %}
 
-            <div class="row todo-item pt-2 pb-2">
-                <div class="col-12 col-lg-8 ">
-                    <span class="status {% if todo.status == 'Pending' %} done {% endif %}"></span> <span class="font-weight-bold" > {{ todo.name }} </span>
-                    <div class="description mt-2 mb-2 pl-4">
-                        {{ todo.description }}
+                <div class="card">
+                    <div class="todo-header " id="headingOne">
+
+                        <div class="btn btn-link collapser d-block   p-2 text-left" type="button" data-toggle="collapse"
+                             data-target="#collapseOne{{ loop.index }}"
+                             aria-expanded="{% if loop.first %} true {% endif %}"
+                             aria-controls="collapseOne{{ loop.index }}">
+                            <span class="status {% if todo.status == 'Pending' %} done {% endif %}"></span> <span
+                                    class=" todo-name"> {{ todo.title }} </span>
+                        </div>
+
+                    </div>
+
+                    <div id="collapseOne{{ loop.index }}" class="collapse "
+                         aria-labelledby="headingOne"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            {{ todo.description }}
+                            <br>
+                            <span> Date: {{ todo.createdDate  | date("m/d/Y") }} </span>
+                            <hr>
+                            <ul class="nav ">
+                                <li class="mr-4 d-inline-block"><a href="/edit/{{ todo.id }}">Edit</a></li>
+                                <li class="mr-4 d-inline-block"><a href="/edit/{{ todo.id }}">Close</a></li>
+                                <li class="mr-4 d-inline-block"><a href="/delete/{{ todo.id }}">Delete</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4">
-                    <span> Date: {{ todo.createdData  | date("m/d/Y") }} </span>
-                </div>
+
+            {% endfor %}
         </div>
-    {% endfor %}
+    {% endif %}
+
+
 {% endblock %}

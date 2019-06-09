@@ -22,7 +22,7 @@ class UdemyController extends AbstractController
      */
     public function index()
     {
-
+//
         $em = $this->getDoctrine()->getManager();
         $todos = $em->getRepository(Todo::class)->findAll();
 
@@ -106,7 +106,7 @@ class UdemyController extends AbstractController
         }
         // update the fields
         $todo->setPriority('Medium')
-            ->setName('Updated  ,' . $todo->getName());
+            ->setTitle('Updated  ,' . $todo->getName());
 
         $entityManager->flush();
 

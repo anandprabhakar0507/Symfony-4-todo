@@ -68,5 +68,20 @@ body {
         border: 1px solid #f9f9f9;
       }
     }
+
+    .card, .accordion > .card:not(:first-of-type):not(:last-of-type) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+      border-width: 0 0 1px 0;
+    }
+
+    .todo-name {
+      font-size: 1.3rem;
+      color: #2e2e2e;
+    }
+
+    .collapse.show,
+    .collapser[aria-expanded="true"] {
+      background: #d3cece2b;
+    }
   }
 }

@@ -1,14 +1,14 @@
 var Encore = require('@symfony/webpack-encore');
-
 Encore
 // directory where compiled assets will be stored
-    .setOutputPath('public/build/')
-    // public path used by the web server to access the output path
+.
+setOutputPath('public/build/')
+// public path used by the web server to access the output path
     .setPublicPath('/build')
 
     .addEntry('app', './assets/js/app.js')
 
-    // .splitEntryChunks()
+    //.splitEntryChunks()
 
 
     .enableSingleRuntimeChunk()
@@ -20,13 +20,14 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     // enables @babel/preset-env polyfills
-    .configureBabel(() => {}, {
+    .configureBabel(() => {
+    }, {
         useBuiltIns: 'usage',
         corejs: 3
     })
 
-// enables Sass/SCSS support
- .enableSassLoader()
+    // enables Sass/SCSS support
+    .enableSassLoader()
 
 // uncomment if you use TypeScript
 //.enableTypeScriptLoader()
