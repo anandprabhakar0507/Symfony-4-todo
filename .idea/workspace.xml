@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6695323-8c62-41d4-8df0-0d9408117348" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/99e54e50-6fec-426e-a68b-f78cdfe9e1b6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/99e54e50-6fec-426e-a68b-f78cdfe9e1b6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f179b224-b97a-40e0-90f8-c4458a79a677.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/udemyTodo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/udemyTodo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UdemyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UdemyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/udemy/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/udemy/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/udemy/todo.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/udemy/todo.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,36 +54,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/UdemyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
+            <state relative-caret-position="3162">
               <caret line="142" column="24" selection-start-line="142" selection-start-column="15" selection-end-line="142" selection-end-column="24" />
               <folding>
                 <element signature="e#807#1512#0#PHP" />
-                <element signature="e#3283#3290#1#PHP" expanded="true" />
-                <element signature="e#3920#3927#1#PHP" expanded="true" />
-                <element signature="e#3308#3917#0#PHP" />
-                <element signature="e#3985#5412#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-              <folding>
-                <element signature="e#208#355#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/udemy/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+            <state relative-caret-position="1395">
+              <caret line="45" column="98" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="103" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
@@ -171,8 +156,8 @@
         <option value="$PROJECT_DIR$/templates/udemy/todo.html.twig" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/Controller/UdemyController.php" />
-        <option value="$PROJECT_DIR$/assets/css/app.scss" />
         <option value="$PROJECT_DIR$/templates/udemy/index.html.twig" />
+        <option value="$PROJECT_DIR$/assets/css/app.scss" />
       </list>
     </option>
   </component>
@@ -258,59 +243,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="udemyTodo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="udemyTodo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="udemyTodo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="udemyTodo" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="udemyTodo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="udemyTodo" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="udemyTodo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="udemyTodo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="udemyTodo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="udemyTodo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="udemyTodo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="udemyTodo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="udemyTodo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="udemyTodo" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="udemyTodo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="udemyTodo" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="udemy" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -319,7 +252,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/DataFixtures" />
+    <property name="last_opened_file_path" value="/var/www/html/prestashop" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -372,7 +305,9 @@
       <workItem from="1559491203038" duration="2005000" />
       <workItem from="1559598793410" duration="87000" />
       <workItem from="1559598903177" duration="8887000" />
-      <workItem from="1559696016005" duration="13352000" />
+      <workItem from="1559696016005" duration="13580000" />
+      <workItem from="1560175904854" duration="599000" />
+      <workItem from="1560287334786" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="Working on he UI section">
       <created>1560082591610</created>
@@ -385,11 +320,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83679000" />
+    <option name="totallyTimeSpent" value="85130000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
+    <frame x="35" y="0" width="1885" height="1080" extended-state="6" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
@@ -522,13 +456,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190603222457.php" />
     <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190509230426.php" />
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190603222831.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="710">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190603222831.php" />
     <entry file="file://$PROJECT_DIR$/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Collection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -537,13 +465,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Citizin.php" />
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190603225724.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
-          <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190603225724.php" />
     <entry file="file://$PROJECT_DIR$/src/Entity/Product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -634,9 +556,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/build/vendors~app.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/build/vendors~app.js" />
     <entry file="file://$PROJECT_DIR$/public/build/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
@@ -772,16 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding>
-            <element signature="e#208#355#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/udemy/todo.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
@@ -794,25 +704,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/UdemyController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
+        <state relative-caret-position="3162">
           <caret line="142" column="24" selection-start-line="142" selection-start-column="15" selection-end-line="142" selection-end-column="24" />
           <folding>
             <element signature="e#807#1512#0#PHP" />
-            <element signature="e#3283#3290#1#PHP" expanded="true" />
-            <element signature="e#3920#3927#1#PHP" expanded="true" />
-            <element signature="e#3308#3917#0#PHP" />
-            <element signature="e#3985#5412#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/udemy/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        <state relative-caret-position="1395">
+          <caret line="45" column="98" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="103" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
         </state>
       </provider>
     </entry>

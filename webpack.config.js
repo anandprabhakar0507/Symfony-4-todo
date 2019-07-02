@@ -1,33 +1,30 @@
-var Encore = require('@symfony/webpack-encore');
+var Encore = require("@symfony/webpack-encore");
 Encore
-// directory where compiled assets will be stored
-.
-setOutputPath('public/build/')
-// public path used by the web server to access the output path
-    .setPublicPath('/build')
+  // directory where compiled assets will be stored
+  .setOutputPath("public/build/")
+  // public path used by the web server to access the output path
+  .setPublicPath("/build")
 
-    .addEntry('app', './assets/js/app.js')
+  .addEntry("app", "./assets/js/app.js")
 
-    //.splitEntryChunks()
+  //.splitEntryChunks()
 
+  .enableSingleRuntimeChunk()
 
-    .enableSingleRuntimeChunk()
+  .cleanupOutputBeforeBuild()
+  .enableBuildNotifications()
+  .enableSourceMaps(!Encore.isProduction())
+  // enables hashed filenames (e.g. app.abc123.css)
+  .enableVersioning(Encore.isProduction())
 
-    .cleanupOutputBeforeBuild()
-    .enableBuildNotifications()
-    .enableSourceMaps(!Encore.isProduction())
-    // enables hashed filenames (e.g. app.abc123.css)
-    .enableVersioning(Encore.isProduction())
+  // enables @babel/preset-env polyfills
+  .configureBabel(() => {}, {
+    useBuiltIns: "usage",
+    corejs: 3
+  })
 
-    // enables @babel/preset-env polyfills
-    .configureBabel(() => {
-    }, {
-        useBuiltIns: 'usage',
-        corejs: 3
-    })
-
-    // enables Sass/SCSS support
-    .enableSassLoader()
+  // enables Sass/SCSS support
+  .enableSassLoader();
 
 // uncomment if you use TypeScript
 //.enableTypeScriptLoader()
@@ -42,6 +39,5 @@ setOutputPath('public/build/')
 // uncomment if you use API Platform Admin (composer req api-admin)
 //.enableReactPreset()
 //.addEntry('admin', './assets/js/admin.js')
-;
 
 module.exports = Encore.getWebpackConfig();
