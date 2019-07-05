@@ -3,14 +3,16 @@
 namespace App\Controller;
 
 
+use App\customEvent\todoEvent;
 use App\Entity\Citizen;
 use App\Entity\City;
-use App\Entity\Product;
 use App\Entity\Todo;
 
 use App\Form\TodoType;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -138,7 +140,6 @@ class UdemyController extends AbstractController
     }
 
 
-
     /**
      * @Route("closeTodo/{id}" , name="close_todo")
      */
@@ -163,16 +164,20 @@ class UdemyController extends AbstractController
     }
 
 
-
     /**
      * Edit todo
      * @Route("/todo-edit/{id}" , name="todo")
      */
 
-    public function EditTodo(String $id, Request $request)
+    public function EditTodo(String $id, Request $request, EventDispatcherInterface $eventDispatcher)
     {
-
+//
+//        $eventDispatcher = new EventDispatcher();
         $todo = $this->getDoctrine()->getRepository(Todo::class)->find($id);
+
+        $todoEvent = new \App\customEvents\TodoEvent($todo);
+        $eventDispatcher->dispatch(\App\customEvents\TodoEvent::NAME, $todoEvent);
+
 
         $form = $this->createForm(TodoType::class);
         $form->setData($todo);
